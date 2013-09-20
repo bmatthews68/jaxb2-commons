@@ -24,7 +24,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <modules>
-        <module>commons-lang3-plugin</module>
+        <module>jaxb2-commons-lang3</module>
     </modules>
     <build>
         <extensions>
