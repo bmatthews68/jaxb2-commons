@@ -15,6 +15,12 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.1</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -31,6 +37,7 @@
                             <extension>true</extension>
                             <args>
                                 <arg>-Xcommons-lang3</arg>
+                                <arg>-Xcommons-lang3:ToStringStyle=SHORT_PREFIX_STYLE</arg>
                             </args>
                             <plugins>
                                 <plugin>
