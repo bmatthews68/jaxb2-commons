@@ -6,7 +6,7 @@
     </prerequisites>
     <groupId>com.btmatthews.jaxb2_commons</groupId>
     <artifactId>jaxb2-commons</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>JAXB2 Commons</name>
     <description>Plugins for JAXB2 RI XJC</description>
@@ -291,7 +291,7 @@
         <connection>scm:git:git@github.com:bmatthews68/jaxb2-commons.git</connection>
         <url>https://github.com/bmatthews68/jaxb2-commons</url>
         <developerConnection>scm:git:git@github.com:bmatthews68/jaxb2-commons.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>jaxb2-commons-1.0.0</tag>
     </scm>
     <distributionManagement>
         <site>
