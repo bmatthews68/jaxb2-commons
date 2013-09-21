@@ -4,13 +4,17 @@ JAXB2 Commons
 Commons Lang3 Plugin
 --------------------
 
-This plugin causes JAXB RI 2.2 XJC to automatically generate methods for:
-* [toString()](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html#toString(\))
-* [equals()](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html#equals(java.lang.Object\))
-* [hashCode()](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html#hashCode(\))
-using [Apache Commons Lang 3](http://commons.apache.org/proper/commons-lang/). The code that uses this plugin can still run with any JAXB2 implementation.
+This is a port of the [commons-lang](https://java.net/projects/jaxb2-commons/pages/Commons-lang) for XJC
+that generates [toString()](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html#toString(\)),
+[equals()](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html#equals(java.lang.Object\)),
+and [hashCode()](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html#hashCode(\)) using
+[Apache Commons Lang 3](http://commons.apache.org/proper/commons-lang/).
 
-This plugin
+This plugin generates the following additional methods using
+[ToStringBuilder](http://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/commons/lang3/builder/ToStringBuilder.html),
+[EqualsBuilder](http://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/commons/lang3/builder/EqualsBuilder.html),
+and [HashCodeBuilder](http://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/commons/lang3/builder/HashCodeBuilder.html):
+
 ```java
 @Override
 public String toString() {
@@ -27,8 +31,14 @@ public void int hashCode() {
     return HashCodeBuilder.reflectionHashCode(this);
 }
 ```
-Usage
-Ant
+
+### Usage
+
+#### Ant
+
+The plugin can be used in an Ant build.xml project file using the following
+configuration:
+
 ```xml
 <taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
     <classpath>
@@ -43,7 +53,12 @@ Ant
     <!-- ... -->
 </xjc>
 ```
-Maven
+
+#### Maven
+
+The plugin can be used in a Maven pom.xml project file using the following
+configuration:
+
 ```xml
 <plugin>
     <groupId>org.jvnet.jaxb2.maven2</groupId>
